@@ -25,7 +25,7 @@ public class Album {
     @JoinColumn(name = "genre_id", nullable = true)
     private Genre genre;
 
-    @ManyToMany()
+    @ManyToMany(cascade = CascadeType.PERSIST)
     private List<Artist> artist;
 
     public List<Artist> getArtist() {

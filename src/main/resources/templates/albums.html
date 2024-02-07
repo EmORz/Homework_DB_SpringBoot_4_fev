@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Albums</title>
+</head>
+<body>
+<h1>Добавяне на албум</h1>
+<form th:action="@{/add}" method="post">
+    <label for="title">Име:</label>
+    <input type="text" id="title" name="title">
+    <br>
+    <label for="year">Година:</label>
+    <input type="number" id="year" name="year">
+    <br>
+    <label for="price">Цена:</label>
+    <input type="number" id="price" name="price">
+    <br>
+    <label for="numberOfSongs">Брой песни:</label>
+    <input type="number" id="numberOfSongs" name="numberOfSongs">
+    <br>
+    <label for="genre">Жанр:</label>
+    <input type="text" id="genre" name="genre">
+    <br>
+    <button type="submit">Добави</button>
+</form>
+
+<h1>Всички албуми</h1>
+<ul>
+    <li th:each="album : ${albums}">
+        <h2><a th:href="@{/album/{id}(id=${album.id})}">{{album.title}}</a></h2>
+        <p>
+            <strong>Година:</strong> {{album.year}}
+            <br>
+            <strong>Цена:</strong> {{album.price}} лв.
+            <br>
+            <strong>Брой песни:</strong> {{album.numberOfSongs}}
+            <br>
+            <strong>Жанр:</strong> {{album.genre.name}}
+        </p>
+    </li>
+</ul>
+</ul>
+</body>
+</html>

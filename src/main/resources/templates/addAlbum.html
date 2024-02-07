@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавяне на албум</title>
+</head>
+<body>
+
+<h1>Добавяне на албум</h1>
+
+<form th:action="@{/add}" method="post">
+  <label for="title">Име на албума:</label>
+  <input type="text" id="title" name="title">
+  <br>
+  <label for="year">Година:</label>
+  <input type="number" id="year" name="year">
+  <br>
+  <label for="price">Цена:</label>
+  <input type="number" id="price" name="price">
+  <br>
+  <label for="numberOfSongs">Брой песни:</label>
+  <input type="number" id="numberOfSongs" name="numberOfSongs">
+  <br>
+  <label for="genre">Жанр:</label>
+  <input type="text" id="genre" name="genre">
+  <br>
+
+  <h2>Информация за изпълнителя</h2>
+
+  <label for="name">Име на изпълнител:</label>
+  <input type="text" id="name" name="name">
+  <br>
+  <label for="nationality">Националност:</label>
+  <input type="text" id="nationality" name="nationality">
+  <br>
+  <label for="yearOfBirth">Година на раждане:</label>
+  <input type="number" id="yearOfBirth" name="yearOfBirth">
+  <br>
+  <br>
+  <button type="submit">Добави</button>
+</form>
+</body>
+</html>
